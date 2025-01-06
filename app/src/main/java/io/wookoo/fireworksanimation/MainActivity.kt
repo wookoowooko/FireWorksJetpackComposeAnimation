@@ -56,7 +56,7 @@ fun Fireworks(
             Firework(
                 firstFireWorkColor = Color.Red,
                 secondFireWorkColor = Color.Blue,
-                lineColor = Color.White,
+                lineColor = Color.Green,
                 constraintPair = Pair(ht1, vg2),
                 reference = fireworkOne,
                 durationTimeMillis = 150
@@ -64,7 +64,7 @@ fun Fireworks(
             Firework(
                 firstFireWorkColor = Color.Blue,
                 secondFireWorkColor = Color.Cyan,
-                lineColor = Color.Gray,
+                lineColor = Color.Blue,
                 constraintPair = Pair(ht2, vg1),
                 reference = fireworkTwo,
                 durationTimeMillis = 200
@@ -72,7 +72,7 @@ fun Fireworks(
             Firework(
                 firstFireWorkColor = Color.Green,
                 secondFireWorkColor = Color.Yellow,
-                lineColor = Color.Black,
+                lineColor = Color.Yellow,
                 constraintPair = Pair(ht3, vg4),
                 reference = fireworkThree,
                 durationTimeMillis = 250
@@ -80,7 +80,7 @@ fun Fireworks(
             Firework(
                 firstFireWorkColor = Color.Magenta,
                 secondFireWorkColor = Color.Red,
-                lineColor = Color.LightGray,
+                lineColor = Color.Blue,
                 constraintPair = Pair(ht4, vg5),
                 reference = fireworkFour,
                 durationTimeMillis = 300
@@ -88,7 +88,7 @@ fun Fireworks(
             Firework(
                 firstFireWorkColor = Color.Yellow,
                 secondFireWorkColor = Color.Red,
-                lineColor = Color.DarkGray,
+                lineColor = Color.Cyan,
                 constraintPair = Pair(ht5, vg6),
                 reference = fireworkFive,
                 durationTimeMillis = 350
