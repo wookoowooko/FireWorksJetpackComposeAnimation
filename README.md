@@ -1,5 +1,6 @@
 # Making FireWorks [2025]
 
+![fireworks](https://github.com/user-attachments/assets/946d0762-dd22-4083-8db8-3eb4c3803272)
 
 
 ## Project Description
