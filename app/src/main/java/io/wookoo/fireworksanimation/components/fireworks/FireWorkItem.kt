@@ -1,4 +1,4 @@
-package io.wookoo.fireworksanimation
+package io.wookoo.fireworksanimation.components.fireworks
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.LinearEasing
@@ -13,20 +13,22 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import io.wookoo.fireworksanimation.components.drawFireWork
-import io.wookoo.fireworksanimation.components.drawLineFromBottom
-import io.wookoo.fireworksanimation.components.eraseFireWork
-import io.wookoo.fireworksanimation.components.eraseLineFromBottom
+import io.wookoo.fireworksanimation.components.fireworks.components.drawFireWork
+import io.wookoo.fireworksanimation.components.fireworks.components.drawLineFromBottom
+import io.wookoo.fireworksanimation.components.fireworks.components.eraseFireWork
+import io.wookoo.fireworksanimation.components.fireworks.components.eraseLineFromBottom
 import kotlinx.coroutines.delay
-
 
 @Composable
 fun FireWorkItem(
     firstFireWorkColor: Color,
     secondFireWorkColor: Color,
     lineColor: Color,
-    fireworkDurationTimeMillis: Int = 170,
-    modifier: Modifier = Modifier
+    fireworkDurationTimeMillis: Int,
+    countOfAnimationInFireWorkItem: Int,
+    innerRadius: Float = 80f,
+    outerRadius: Float = 120f,
+    modifier: Modifier = Modifier,
 ) {
     BoxWithConstraints(
         modifier = modifier
@@ -34,8 +36,6 @@ fun FireWorkItem(
     ) {
         val centerX = constraints.maxWidth / 2f
         val centerY = constraints.maxHeight / 2f
-        val innerRadius = 80f
-        val outerRadius = 120f
         val lineCount = 10
         val drawLineFromBottomToCenter = remember { Animatable(0f) }
         val eraseLineFromBottomToCenter = remember { Animatable(1f) }
@@ -43,11 +43,10 @@ fun FireWorkItem(
         val eraseFireWork = remember { Animatable(1f) }
         val drawFireWork2 = remember { Animatable(0f) }
         val eraseFireWork2 = remember { Animatable(1f) }
-        val animationCount = 6
 
         val animationState =
             produceState(initialValue = 0) {
-                while (value < animationCount) {
+                while (value < countOfAnimationInFireWorkItem) {
                     value += 1
                     delay(fireworkDurationTimeMillis.toLong())
                 }
@@ -120,6 +119,9 @@ fun FireWorkItem(
         Canvas(
             modifier = Modifier.matchParentSize()
         ) {
+
+
+
             when (animationState.value) {
                 1 -> drawLineFromBottom(
                     centerX = centerX,
@@ -180,4 +182,3 @@ fun FireWorkItem(
         }
     }
 }
-
